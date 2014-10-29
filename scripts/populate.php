@@ -47,7 +47,7 @@ while (($row = fgetcsv($fp, 1000, ",")) !== FALSE) {
 	$doc->icao_code = $row[5];
 	$doc->altitude = $row[8];
 
-	$doc->latlon = doubleval($row[6]) . "," . $row[7];
+	$doc->latlon = doubleval($row[6]) . "," . doubleval($row[7]);
 
 	// Let's simply add and commit straight away.
 	$update->addDocument($doc);
@@ -58,6 +58,7 @@ while (($row = fgetcsv($fp, 1000, ",")) !== FALSE) {
 
 	$num_imported++;
 
+	// Sleep for a couple of seconds, lest we go too fast for SOLR
 	sleep(2);
 
 }
