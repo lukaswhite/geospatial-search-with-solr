@@ -1,0 +1,34 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon.eot?-t6io25');
+	src:url('../fonts/icomoon.eot?#iefix-t6io25') format('embedded-opentype'),
+		url('../fonts/icomoon.woff?-t6io25') format('woff'),
+		url('../fonts/icomoon.ttf?-t6io25') format('truetype'),
+		url('../fonts/icomoon.svg?-t6io25#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-target:before {
+	content: "\e600";
+}
+.icon-search:before {
+	content: "\e601";
+}
+.icon-airplane:before {
+	content: "\e602";
+}

@@ -1,0 +1,15 @@
+{
+    "name": "lukaswhite/geospatial-solr-example",
+    "description": "A simple example application demonstrating Geospatial search using SOLR and Solarium",
+    "require": {
+        "silex/silex": "~1.1",
+        "twig/twig": ">=1.8,<2.0-dev",
+        "solarium/solarium": "dev-develop"
+    },
+    "authors": [
+        {
+            "name": "lukaswhite",
+            "email": "hello@lukaswhite.com"
+        }
+    ]
+}
