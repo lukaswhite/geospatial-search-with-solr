@@ -4,6 +4,8 @@
     <fieldType name="string"    class="solr.StrField"  sortMissingLast="true" omitNorms="true" />
     <fieldType name="long"      class="solr.TrieLongField" precisionStep="0" positionIncrementGap="0"/>
     <fieldType name="int"       class="solr.TrieIntField" precisionStep="0" positionIncrementGap="0"/>
+    <fieldType name="tdouble" class="solr.TrieDoubleField" precisionStep="8" omitNorms="true" positionIncrementGap="0"/>
+    <fieldType name="location"  class="solr.LatLonType" subFieldSuffix="_coordinate"/>
     <!-- A general text field that has reasonable, generic
          cross-language defaults: it tokenizes with StandardTokenizer,
    removes stop words from case-insensitive "stopwords.txt"
@@ -30,9 +32,9 @@
 
   <fields>
     <field name="id"            type="string"  indexed="true"  stored="true"  multiValued="false" required="true"/>
-    <field name="name"        	type="text_general"  indexed="true"  stored="true"  multiValued="false" required="true"/>
-    <field name="city"      		type="text_general"  indexed="true"  stored="true"  multiValued="false" />
-    <field name="country"      	type="text_general"  indexed="true"  stored="true"  multiValued="false" />
+    <field name="name"          type="text_general"  indexed="true"  stored="true"  multiValued="false" required="true"/>
+    <field name="city"          type="text_general"  indexed="true"  stored="true"  multiValued="false" />
+    <field name="country"       type="text_general"  indexed="true"  stored="true"  multiValued="false" />
     <field name="faa_faa_code"  type="string"  indexed="true"  stored="true"  multiValued="false" />
     <field name="icao_code"     type="string"  indexed="true"  stored="true"  multiValued="false" />
     <field name="altitude"      type="string"  indexed="true"  stored="true"  multiValued="false" />
@@ -40,6 +42,9 @@
     <field name="latlon"        type="location" indexed="true"  stored="true"  multiValued="false" />
 
     <field name="_version_"     type="long"    indexed="true"  stored="true"/>
+
+    <dynamicField name="*_coordinate" type="tdouble" indexed="true" 
+      stored="false" />
   </fields>
 
   <!-- field to use to determine and enforce document uniqueness. -->
